@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <div class="row mb-4">
+    <div class="row">
       <!-- Loop through products -->
-      <div class="col-4 mt-4" v-for="product in products" :key="product.id">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-3 mt-3" v-for="product in products" :key="product.id">
         <!-- Card structure (same as above) -->
         <div class="card shadow card-product">
           <img

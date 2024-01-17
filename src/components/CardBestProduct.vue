@@ -10,9 +10,9 @@
           >
         </div>
       </div>
-      <div class="row mb-4">
+      <div class="row">
         <!-- Loop through best_products -->
-        <div class="col-4 mt-4" v-for="product in best_products" :key="product.id">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 mt-3" v-for="product in best_products" :key="product.id">
           <!-- Card structure -->
           <div class="card shadow card-product">
             <img :src="`images/` + product.gambar" class="card-img-top" alt="..." />
