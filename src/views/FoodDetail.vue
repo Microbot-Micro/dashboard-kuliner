@@ -21,11 +21,11 @@
       </div>
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-6 col-sm-12 mb-3 ">
           <!-- Tampilkan gambar jika ada -->
           <img :src="`../images/` + product.gambar" class="img-fluid shadow" alt="" />
         </div>
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-6 col-sm-12 mb-3 ">
           <h2>
             <strong>{{ product.nama }}</strong>
           </h2>
