@@ -69,7 +69,7 @@ export default {
       pesan: {
         jumlah_pesanan: "",
         keterangan: "",
-        productId: null,
+        product_id: null,
       }
     };
   },
@@ -81,7 +81,7 @@ export default {
           `${this.apiUrl}/products/${this.$route.params.id}`
         );
         this.product = data;
-        this.pesan.productId = this.product.id;
+        this.pesan.product_id = this.product.id;
       } catch (error) {
         console.log(error);
       }

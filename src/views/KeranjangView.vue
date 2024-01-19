@@ -43,17 +43,17 @@
             <tr v-for="(keranjang, index) in keranjangs" :key="keranjang.id">
               <th>{{ index + 1 }}</th>
               <td>
-                <img :src="'../images/' + keranjang.Product.gambar" class="img-fluid shadow" width="150px" />
+                <img :src="'../images/' + keranjang.product.gambar" class="img-fluid shadow" width="150px" />
               </td>
-              <td>{{ keranjang.Product.nama }}</td>
+              <td>{{ keranjang.product.nama }}</td>
               <td>{{ keranjang.keterangan ? keranjang.keterangan : "-" }}</td>
               <td>{{ keranjang.jumlah_pesanan }}</td>
-              <td>Rp. {{ keranjang.Product.harga }}</td>
+              <td>Rp. {{ keranjang.product.harga }}</td>
               <td>
                 Rp.
                 <strong>
                   {{
-                    keranjang.jumlah_pesanan * keranjang.Product.harga
+                    keranjang.jumlah_pesanan * keranjang.product.harga
                   }}</strong>
               </td>
               <td>
@@ -114,7 +114,7 @@ export default {
       pesanan: {
         nama: '',
         noMeja: '',
-        keranjangId: null
+        keranjang_id: null
       }
     };
   },
@@ -135,7 +135,7 @@ export default {
         this.pesanan = {
           nama: '',
           noMeja: '',
-          keranjangId: null
+          keranjang_id: null
         };
       } catch (error) {
         console.log(error);
@@ -151,7 +151,7 @@ export default {
 
         if (data.length > 0) {
           const firstKeranjangId = data[0].id;
-          this.pesanan.keranjangId = firstKeranjangId;
+          this.pesanan.keranjang_id = firstKeranjangId;
         }
 
         this.keranjangs = data;
@@ -167,7 +167,7 @@ export default {
         const deletedKeranjang = this.keranjangs.find(keranjang => keranjang.id === id);
         await axios.delete(`${this.apiUrl}/keranjangs/${id}`);
         this.keranjangs = this.keranjangs.filter(keranjang => keranjang.id !== id);
-        this.$toast.success(`Pesanan Keranjang Anda ${deletedKeranjang.Product.nama} Berhasil diihapus`, { position: 'top-right' });
+        this.$toast.success(`Pesanan Keranjang Anda ${deletedKeranjang.product.nama} Berhasil diihapus`, { position: 'top-right' });
       } catch (error) {
         console.error('Error in delKeranjang:', error);
         this.$toast.error(`Gagal Menghapus Keranjang`, { position: 'top-right' });
@@ -179,7 +179,7 @@ export default {
   computed: {
     totalHarga() {
       return this.keranjangs.reduce(function (total, keranjang) {
-        return total + keranjang.jumlah_pesanan * keranjang.Product.harga;
+        return total + keranjang.jumlah_pesanan * keranjang.product.harga;
       }, 0);
     }
   },
