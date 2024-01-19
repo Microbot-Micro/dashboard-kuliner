@@ -27,7 +27,7 @@
       </div>
       <div class="table-responsive mt-3">
         <table class="table">
-          <thead>
+          <thead class="table-secondary">
             <tr>
               <th scope="col">No</th>
               <th scope="col">Foto</th>
@@ -80,11 +80,11 @@
       <div class="col-md-6 mb-2 mt-2">
         <form v-on:submit.prevent="postPesanan">
           <div class="form-group mt-3 mb-3">
-            <label for="nama">Nama Pelanggan</label>
+            <label for="nama" class="mb-2"><strong>Nama Pelanggan</strong></label>
             <input type="text" class="form-control" v-model="pesanan.nama" />
           </div>
           <div class="form-group mt-3 mb-3">
-            <label for="noMeja">No Meja</label>
+            <label for="noMeja" class="mb-2"><strong>No Meja</strong></label>
             <input type="text" class="form-control" v-model="pesanan.noMeja" />
           </div>
           <button type="submit" class="btn btn-success float-end">

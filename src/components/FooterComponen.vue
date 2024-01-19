@@ -3,7 +3,7 @@
         <hr />
         <div class="row">
             <div class="col text-center">
-                2024 Copyright Microbot_Code
+                2024 Copyright  <i class="bi bi-github" @click="goToGitHub"> Microbot-Micro</i>
             </div>
         </div>
     </div>
@@ -11,7 +11,12 @@
 
 <script>
     export default {
-        name: 'FooterComponen'
+        name: 'FooterComponent',
+        methods: {
+            goToGitHub() {
+                window.open('https://github.com/Microbot-Micro/dashboard-kuliner', '_blank');
+            }
+        }
     }
 </script>
 
